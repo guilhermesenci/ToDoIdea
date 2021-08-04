@@ -4,17 +4,17 @@ import Main from '../template/Main'
 
 const headerProps = {
   icon: 'users',
-  title: 'Usuários',
-  subtitle: 'Cadastro de usuários: Incluir, Listar, Alterar e Deletar'
+  title: 'titulo',
+  desc: 'Afazeres: Incluir, Listar, Alterar e Deletar'
 }
 
-const baseUrl = 'http://localhost:3001/users'
+const baseUrl = 'http://localhost:3001/todo'
 const initialState = {
-  user: { name: '', email: '' },
+  user: { title: '', desc: '' },
   list: []
 }
 
-export default class UserCrud extends Component {
+export default class Crud extends Component {
 
   state = { ...initialState }
 
@@ -47,7 +47,7 @@ export default class UserCrud extends Component {
 
   upDateField(event) {
     const user = { ...this.state.user }
-    user[event.target.name] = event.target.value
+    user[event.target.title] = event.target.value
     this.setState({ user })
   }
 
@@ -57,25 +57,26 @@ export default class UserCrud extends Component {
         <div className="row">
           <div className="col-12 col-md-6">
             <div className="form-group">
-              <label>Nome</label>
+              <label>Titulo</label>
               <input
                 type="text"
                 className="form-control"
-                name="name" value={this.state.name}
+                name="title"
+                value={this.state.title}
                 onChange={e => this.upDateField(e)}
-                placeholder="Digite o nome" />
+                placeholder="Digite o título" />
             </div>
           </div>
           <div className="col-12 col-md-6">
             <div className="form-group">
-              <label>Email</label>
+              <label>Descrição</label>
               <input
                 type="text"
                 className="form-control"
-                name="email"
-                value={this.state.email}
+                name="desc"
+                value={this.state.desc}
                 onChange={e => this.upDateField(e)}
-                placeholder="Digite o Email"
+                placeholder="Digite a descrição"
               />
             </div>
           </div>
@@ -118,8 +119,8 @@ export default class UserCrud extends Component {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Nome</th>
-            <th>Email</th>
+            <th>titulo</th>
+            <th>descriçao</th>
             <th>Ação</th>
           </tr>
         </thead>
@@ -135,8 +136,8 @@ export default class UserCrud extends Component {
       return (
         <tr key={user.id}>
           <td>{user.id}</td>
-          <td>{user.name}</td>
-          <td>{user.email}</td>
+          <td>{user.title}</td>
+          <td>{user.desc}</td>
           <td>
             <button className="btn btn-warning" onClick={() => this.load(user)}>
               <i className="fa fa-pencil">

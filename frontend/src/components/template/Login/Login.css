@@ -1,0 +1,12 @@
+.userlogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.formcontrol {
+  display: flex;
+  flex-direction: column;
+}

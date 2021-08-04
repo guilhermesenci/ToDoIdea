@@ -1,5 +1,6 @@
 import React from 'react'
 import Main from '../template/Main'
+import UserLogin from '../template/Login/Login'
 
 export default props =>
   <Main
@@ -10,4 +11,5 @@ export default props =>
     <div className="display-4">Bem vindo</div>
     <hr />
     <p className="mb-0">Sistema desenvolvido para exemplo de ToDo com crud</p>
+    <UserLogin />
   </Main>
