@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Guilherme Senci",
+      "email": "guilherme.g.senci@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Talita gabriele",
+      "email": "talita@pmo.com.br"
+    }
+  ]
+}
